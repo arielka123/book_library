@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/AuthorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorFx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/BookFx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/BookModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/ListBookModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/FillDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/converters/ConverterAuthor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/converters/ConverterBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/converters/ConverterCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="created tables in db" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701166682647</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="created tables in db">
+      <created>1701184936171</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184936171</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +189,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added orm" />
     <MESSAGE value="solved problem dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved problem dependencies" />
+    <MESSAGE value="created tables in db" />
+    <option name="LAST_COMMIT_MESSAGE" value="created tables in db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
