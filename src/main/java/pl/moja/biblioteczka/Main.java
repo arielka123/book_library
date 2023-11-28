@@ -1,7 +1,5 @@
 package pl.moja.biblioteczka;
 
-import com.j256.ormlite.jdbc.JdbcConnectionSource;
-import com.j256.ormlite.support.ConnectionSource;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -9,6 +7,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import pl.moja.biblioteczka.utils.FxmlUtils;
+import pl.moja.biblioteczka.database.dbuitls.DbManager;
+import pl.moja.biblioteczka.utils.FillDatabase;
 
 import java.util.ResourceBundle;
 
@@ -21,10 +21,9 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
 
 //          Locale.setDefault(new Locale("pl"));
-//        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BorderPaneMain.fxml"));
 
         try {
             Pane borderPane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
@@ -34,7 +33,7 @@ public class Main extends Application {
             ResourceBundle bundle = FxmlUtils.getResourceBundle();
             primaryStage.setTitle(bundle.getString("tittle.application"));
             primaryStage.show();
-        }catch(Exception e){
+        } catch (Exception e) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setTitle("error");
             TextArea textArea = new TextArea(e.getMessage());
@@ -42,10 +41,9 @@ public class Main extends Application {
             errorAlert.showAndWait();
         }
 
-        String JDBC_DRIVER_HD = "jdbc:sqlite:database.db";
-        ConnectionSource connectionSource = new JdbcConnectionSource(JDBC_DRIVER_HD);
-        connectionSource.close();
-//        DbManager.initDatabase();
-//        FillDatabase.fillDatabase();
+        DbManager.initDatabase();
+        FillDatabase.fillDatabase();
     }
 }
+
+

@@ -4,33 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="added orm">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddCategory.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/category.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/AuthorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorFx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/BookFx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/BookModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/ListBookModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/FillDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/converters/ConverterAuthor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/converters/ConverterBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/converters/ConverterCategory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/TopMenuButtonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/TopMenuButtonsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/AuthorDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/BookDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/CategoryDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/CommonDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbutis/DbManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BorderPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BorderPaneMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Library.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Library.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/bookButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/icons/bookButton.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,18 +81,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Arielka/Desktop/projekt_przyszly_programista/java/MojaBiblioteczka/src/main/resources/icons",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.32413793",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arielka/Desktop/projekt_przyszly_programista/java/MojaBiblioteczka/src/main/resources/icons&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.32413793&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pl.moja.biblioteczka.database.models" />
@@ -109,6 +101,13 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\icons" />
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\fxml" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka" />
+      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\utils" />
+      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\controllers" />
+      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\database" />
+      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\database\models" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pl.moja.biblioteczka.database.models" />
@@ -160,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700819276115</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="solved problem dependencies">
+      <created>1701166682647</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701166682647</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,7 +199,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added orm" />
-    <option name="LAST_COMMIT_MESSAGE" value="added orm" />
+    <MESSAGE value="solved problem dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved problem dependencies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -213,11 +220,10 @@
           <line>66</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbutis/DbManager.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="pl.moja.biblioteczka.utils.exceptions.ApplicationException" package="pl.moja.biblioteczka.utils.exceptions" />
+          <option name="timeStamp" value="10" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
