@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 public class TopMenuButtonsController {
 
     public static final String ADD_BOOK_FXML = "/fxml/AddBook.fxml";
+    public static final String ADD_CATEGORY_FXML = "/fxml/AddCategory.fxml";
     public static final String STATS_FXML = "/fxml/Stats.fxml";
     public static final String LIST_BOOKS_FXML = "/fxml/ListBooks.fxml";
     public static final String LIBRARY_FXML = "/fxml/Library.fxml";
@@ -46,11 +47,19 @@ public class TopMenuButtonsController {
 
     @FXML
     public void addBook() {
-        if(toggleButtons.getSelectedToggle()!=null){
-            toggleButtons.getSelectedToggle().setSelected(false);
-        }
+        resetToggleButtons();
         mainController.setCenter(ADD_BOOK_FXML);
     }
 
+    public void addCategory() {
+        resetToggleButtons();
 
+        mainController.setCenter(ADD_CATEGORY_FXML);
+    }
+
+    private void resetToggleButtons() {
+        if (toggleButtons.getSelectedToggle() != null) {
+            toggleButtons.getSelectedToggle().setSelected(false);
+        }
+    }
 }

@@ -35,11 +35,4 @@ public class Category implements BaseModel {
         this.name = name;
     }
 
-    public ForeignCollection<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(ForeignCollection<Book> books) {
-        this.books = books;
-    }
 }

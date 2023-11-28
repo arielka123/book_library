@@ -4,48 +4,86 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb9c6e3-4354-49db-b814-040edfad0138" name="Changes" comment="application with books">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/DialogsUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/FxmlUtils.java" afterDir="false" />
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="added orm">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddCategory.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/category.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/TopMenuButtonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/TopMenuButtonsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/AuthorDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/BookDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/CategoryDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/CommonDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbutis/DbManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/BaseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BorderPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BorderPaneMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Library.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Library.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/bookButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/icons/bookButton.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2WqWnSNaDMOKBrUb0rbVmbxhMoe" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2YZUzM14Mg1YpgXF05Wb53gBGmH" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -54,51 +92,75 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Arielka/Desktop/projekt_przyszly_programista/java/MojaBiblioteczka/src/main/resources/fxml",
+    "last_opened_file_path": "C:/Users/Arielka/Desktop/projekt_przyszly_programista/java/MojaBiblioteczka/src/main/resources/icons",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.22413793",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+    "project.structure.side.proportion": "0.32413793",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="pl.moja.biblioteczka.database.models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\fxml" />
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\icons" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\controllers" />
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\fxml" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.moja.biblioteczka.database.models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.moja.biblioteczka.Main" />
+      <module name="MojaBiblioteczka" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.moja.biblioteczka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MojaBiblioteczka-1.0-SNAPSHOT-shaded.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/MojaBiblioteczka-1.0-SNAPSHOT-shaded.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MojaBiblioteczka-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/MojaBiblioteczka-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.MojaBiblioteczka-1.0-SNAPSHOT-shaded.jar" />
+        <item itemvalue="JAR Application.MojaBiblioteczka-1.0-SNAPSHOT.jar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7cb9c6e3-4354-49db-b814-040edfad0138" name="Changes" comment="" />
-      <created>1697460760777</created>
+      <changelist id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="" />
+      <created>1700732865306</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1697460760777</updated>
+      <updated>1700732865306</updated>
     </task>
-    <task id="LOCAL-00001" summary="add gitignore">
-      <created>1700647774941</created>
+    <task id="LOCAL-00001" summary="added orm">
+      <created>1700819276115</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1700647774941</updated>
+      <updated>1700819276115</updated>
     </task>
-    <task id="LOCAL-00002" summary="application with books">
-      <created>1700648088970</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1700648088970</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,13 +192,36 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add gitignore" />
-    <MESSAGE value="application with books" />
-    <option name="LAST_COMMIT_MESSAGE" value="application with books" />
+    <MESSAGE value="added orm" />
+    <option name="LAST_COMMIT_MESSAGE" value="added orm" />
   </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/j256/ormlite/ormlite-jdbc/6.1/ormlite-jdbc-6.1.jar!/com/j256/ormlite/dao/DaoManager.class</url>
+          <line>30</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/j256/ormlite/ormlite-jdbc/6.1/ormlite-jdbc-6.1.jar!/com/j256/ormlite/dao/BaseDaoImpl.class</url>
+          <line>78</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/j256/ormlite/ormlite-jdbc/6.1/ormlite-jdbc-6.1.jar!/com/j256/ormlite/dao/DaoManager.class</url>
+          <line>66</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbutis/DbManager.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MojaBiblioteczka$.ic" NAME=" Coverage Results" MODIFIED="1700824996632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

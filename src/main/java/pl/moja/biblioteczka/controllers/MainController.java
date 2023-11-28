@@ -37,7 +37,6 @@ public class MainController {
         borderPane.setCenter(FxmlUtils.fxmlLoader(fxmlPath));
     }
 
-
     public void closeApplication() {
         Optional<ButtonType> result = DialogsUtils.confirmationDialog();
         if(result.get()==ButtonType.OK){
