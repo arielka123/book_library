@@ -1,6 +1,7 @@
 package pl.moja.biblioteczka.controllers;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -20,18 +21,23 @@ public class CategoryController {
     @FXML
     private ComboBox<CategoryFx> categoryComboBox;
     private CategoryModel categoryModel;
+    @FXML
+    private  Button deleteCategoryButton;
 
     @FXML
-    public void initialize() {
+    public void initialize() throws ApplicationException {
         this.categoryModel = new CategoryModel();
+        this.categoryModel.init();
+        this.categoryComboBox.setItems(this.categoryModel.getCategoryList());
         initBindings();
-
     }
 
     private void initBindings() {
         addCategoryButton.disableProperty().bind(categoryTextField.textProperty().isEmpty());   //gdy textfield jest pusty =true i przycisk wyłączony
-    }
 
+        deleteCategoryButton.disableProperty().bind(this.categoryModel.categoryProperty().isNull());
+
+    }
 
     public void addCategoryOnAction() {
      String  name = categoryTextField.getText();
@@ -42,5 +48,16 @@ public class CategoryController {
             throw new RuntimeException(e);
             //TODO alert z bundles
         }
+    }
+
+    public void deleteCategoryOnAction() throws ApplicationException {
+        categoryModel.deleteCategoryById();
+    }
+
+    public void comboBoxOnAction(){
+        CategoryFx selectedComboBox = this.categoryComboBox.getSelectionModel().getSelectedItem();
+
+        this.categoryModel.setCategory(selectedComboBox);
+
     }
 }

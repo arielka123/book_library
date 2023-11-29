@@ -11,7 +11,7 @@ import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 import java.util.Date;
 
 public class FillDatabase {
-    public static void fillDatabase() {
+    public static  void fillDatabase(){
         Category category1 = new Category();
         category1.setName("Dramat");
         Author author1 = new Author();
@@ -93,4 +93,4 @@ public class FillDatabase {
         }
         DbManager.closeConnectionSource();
     }
-}
+    }

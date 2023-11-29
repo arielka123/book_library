@@ -25,24 +25,16 @@ public class Main extends Application {
 
 //          Locale.setDefault(new Locale("pl"));
 
-        try {
-            Pane borderPane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
-            Scene scene = new Scene(borderPane);
-            primaryStage.setResizable(false);
-            primaryStage.setScene(scene);
-            ResourceBundle bundle = FxmlUtils.getResourceBundle();
-            primaryStage.setTitle(bundle.getString("tittle.application"));
-            primaryStage.show();
-        } catch (Exception e) {
-            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setTitle("error");
-            TextArea textArea = new TextArea(e.getMessage());
-            errorAlert.getDialogPane().setContent(textArea);
-            errorAlert.showAndWait();
-        }
+        Pane borderPane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
+        Scene scene = new Scene(borderPane);
+        primaryStage.setResizable(false);
+        primaryStage.setScene(scene);
+        ResourceBundle bundle = FxmlUtils.getResourceBundle();
+        primaryStage.setTitle(bundle.getString("tittle.application"));
+        primaryStage.show();
 
         DbManager.initDatabase();
-        FillDatabase.fillDatabase();
+        //FillDatabase.fillDatabase();
     }
 }
 

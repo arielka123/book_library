@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="added files">
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="addCategoryButton binded with categoryTextField">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbuitls/DbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbuitls/DbManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryFx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/FillDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/FillDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddCategory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddCategory.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +98,8 @@
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\fxml" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka" />
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\utils" />
+      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka" />
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\controllers" />
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\database" />
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka\database\models" />
@@ -168,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701185342499</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="addCategoryButton binded with categoryTextField">
+      <created>1701189138790</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701189138790</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,7 +218,8 @@
     <MESSAGE value="solved problem dependencies" />
     <MESSAGE value="created tables in db" />
     <MESSAGE value="added files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added files" />
+    <MESSAGE value="addCategoryButton binded with categoryTextField" />
+    <option name="LAST_COMMIT_MESSAGE" value="addCategoryButton binded with categoryTextField" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
