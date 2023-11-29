@@ -8,6 +8,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import pl.moja.biblioteczka.modelFx.CategoryFx;
 import pl.moja.biblioteczka.modelFx.CategoryModel;
+import pl.moja.biblioteczka.utils.DialogsUtils;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 
 import java.sql.SQLOutput;
@@ -23,11 +24,17 @@ public class CategoryController {
     private CategoryModel categoryModel;
     @FXML
     private  Button deleteCategoryButton;
+    @FXML
+    private  Button editCategoryButton;
 
     @FXML
-    public void initialize() throws ApplicationException {
+    public void initialize() {
         this.categoryModel = new CategoryModel();
-        this.categoryModel.init();
+        try {
+            this.categoryModel.init();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
         this.categoryComboBox.setItems(this.categoryModel.getCategoryList());
         initBindings();
     }
@@ -36,28 +43,43 @@ public class CategoryController {
         addCategoryButton.disableProperty().bind(categoryTextField.textProperty().isEmpty());   //gdy textfield jest pusty =true i przycisk wyłączony
 
         deleteCategoryButton.disableProperty().bind(this.categoryModel.categoryProperty().isNull());
+        editCategoryButton.disableProperty().bind(this.categoryModel.categoryProperty().isNull());
 
     }
 
-    public void addCategoryOnAction() {
+    public void OnActionAddCategory() {
      String  name = categoryTextField.getText();
         try {
             categoryModel.saveCategoryInDataBase(name);
             categoryTextField.clear();
         } catch (ApplicationException e) {
-            throw new RuntimeException(e);
-            //TODO alert z bundles
+            DialogsUtils.errorDialog(e.getMessage());
         }
     }
 
-    public void deleteCategoryOnAction() throws ApplicationException {
-        categoryModel.deleteCategoryById();
+    public void OnActionDeleteCategory(){
+        try {
+            categoryModel.deleteCategoryById();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
     }
 
-    public void comboBoxOnAction(){
+    public void OnActionComboBox(){
         CategoryFx selectedComboBox = this.categoryComboBox.getSelectionModel().getSelectedItem();
-
         this.categoryModel.setCategory(selectedComboBox);
 
+    }
+
+    public void OnActionEditCategory(){
+        String newCategoryName = DialogsUtils.editDialog(this.categoryModel.getCategory().getName());
+        if(newCategoryName!=null){
+            this.categoryModel.getCategory().setName(newCategoryName);
+            try {
+                this.categoryModel.updateCategoryInDatabase();
+            } catch (ApplicationException e) {
+                DialogsUtils.errorDialog(e.getMessage());
+            }
+        }
     }
 }
