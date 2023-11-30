@@ -1,4 +1,5 @@
 package pl.moja.biblioteczka.controllers;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -27,41 +28,19 @@ public class AuthorController {
     @FXML
     private MenuItem deleteMenuItem;
 
-
     private AuthorModel authorModel;
 
-    public void initialize() {
+    public void initialize() throws ApplicationException {
         this.authorModel = new AuthorModel();
-        try {
-            this.authorModel.init();
-        } catch (ApplicationException e) {
-            DialogsUtils.errorDialog(e.getMessage());
-        }
-        bindings();
-        bindingsTableView();
-    }
-
-    private void bindingsTableView() {
-        this.authorTableView.setItems(this.authorModel.getAuthorFxObservableList());
-        this.nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        this.surnameColumn.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
-
-        this.nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        this.surnameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-
-        this.authorTableView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            this.authorModel.setAuthorFxObjectPropertyEdit(newValue);
-        });
-    }
-
-    private void bindings() {
-        this.authorModel.authorFxObjectPropertyProperty().get().nameProperty().bind(this.nameTextField.textProperty());
-        this.authorModel.authorFxObjectPropertyProperty().get().surnameProperty().bind(this.surnameTextField.textProperty());
+        authorModel.authorFxObjectPropertyProperty().get().nameProperty().bind(this.nameTextField.textProperty());
+        this.authorModel.authorFxObjectPropertyProperty().get().surnameProperty().bind(this.surnameTextField.textProperty()); // oszczedność. Automatycznie dane wpisane do texfilda znajdują się w obiekcie
         this.addButton.disableProperty().bind(this.nameTextField.textProperty().isEmpty().or(this.surnameTextField.textProperty().isEmpty()));
-        this.deleteMenuItem.disableProperty().bind(this.authorTableView.getSelectionModel().selectedItemProperty().isNull());
     }
 
-    public void addAuthorOnAction() {
+
+    public void OnActionAddAuthor() {
+        System.out.println(this.authorModel.getAuthorFxObjectProperty().getName());
+        System.out.println(this.authorModel.getAuthorFxObjectProperty().getSurname());
         try {
             this.authorModel.saveAuthorInDataBase();
         } catch (ApplicationException e) {
@@ -69,31 +48,8 @@ public class AuthorController {
         }
         this.nameTextField.clear();
         this.surnameTextField.clear();
+
     }
 
-    public void onEditCommitName(TableColumn.CellEditEvent<AuthorFx, String> authorFxStringCellEditEvent) {
-        this.authorModel.getAuthorFxObjectPropertyEdit().setName(authorFxStringCellEditEvent.getNewValue());
-        updateInDatabase();
-    }
 
-    public void onEditCommitSurname(TableColumn.CellEditEvent<AuthorFx, String> authorFxStringCellEditEvent) {
-        this.authorModel.getAuthorFxObjectPropertyEdit().setSurname(authorFxStringCellEditEvent.getNewValue());
-        updateInDatabase();
-    }
-
-    private void updateInDatabase() {
-        try {
-            this.authorModel.saveAuthorEditInDataBase();
-        } catch (ApplicationException e) {
-            DialogsUtils.errorDialog(e.getMessage());
-        }
-    }
-
-    public void deleteAuthorOnAction() {
-        try {
-            this.authorModel.deleteAuthorInDataBase();
-        } catch (ApplicationException | SQLException e) {
-            DialogsUtils.errorDialog(e.getMessage());
-        }
-    }
 }

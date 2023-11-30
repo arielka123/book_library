@@ -17,7 +17,7 @@ import java.util.List;
 
 public class CategoryModel {
 
-    private ObservableList<CategoryFx> categoryList = FXCollections.observableArrayList();  //lista poprana z bazy
+    private ObservableList<CategoryFx> categoryList = FXCollections.observableArrayList();  //lista pobrana z bazy
     private ObjectProperty<CategoryFx> category = new SimpleObjectProperty<>(); //wybrany element z combobox
     private TreeItem<String>root = new TreeItem<>();
 

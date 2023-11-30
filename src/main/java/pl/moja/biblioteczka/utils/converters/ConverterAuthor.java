@@ -4,9 +4,9 @@ import pl.moja.biblioteczka.database.models.Author;
 import pl.moja.biblioteczka.modelFx.AuthorFx;
 
     public class ConverterAuthor {
-        public static Author converToAuthor(AuthorFx authorFx){
+        public static Author convertAuthorFxToAuthor(AuthorFx authorFx){
             Author author = new Author();
-            author.setId(authorFx.getId());
+//            author.setId(authorFx.getId());
             author.setName(authorFx.getName());
             author.setSurname(authorFx.getSurname());
             return author;
