@@ -30,11 +30,21 @@ public class AuthorController {
 
     private AuthorModel authorModel;
 
-    public void initialize() throws ApplicationException {
+    public void initialize() {
         this.authorModel = new AuthorModel();
+        try {
+            this.authorModel.init();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
         authorModel.authorFxObjectPropertyProperty().get().nameProperty().bind(this.nameTextField.textProperty());
         this.authorModel.authorFxObjectPropertyProperty().get().surnameProperty().bind(this.surnameTextField.textProperty()); // oszczedność. Automatycznie dane wpisane do texfilda znajdują się w obiekcie
         this.addButton.disableProperty().bind(this.nameTextField.textProperty().isEmpty().or(this.surnameTextField.textProperty().isEmpty()));
+
+        this.authorTableView.setItems(this.authorModel.getAuthorFxObservableList());
+        this.nameColumn.setCellValueFactory(cellData->cellData.getValue().nameProperty());
+        this.surnameColumn.setCellValueFactory(cellData->cellData.getValue().surnameProperty());
+
     }
 
 

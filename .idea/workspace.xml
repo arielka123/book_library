@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="added TreeView">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/addAuthor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/addBook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/addCategory.png" afterDir="false" />
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="added authors to db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/AuthorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/TopMenuButtonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/TopMenuButtonsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbuitls/DbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbuitls/DbManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/models/Author.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/converters/ConverterAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/utils/converters/ConverterAuthor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/bookButton.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/category.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701335500133</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added authors to db">
+      <created>1701350420196</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701350420197</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +245,8 @@
     <MESSAGE value="comboBox" />
     <MESSAGE value="added exceptions" />
     <MESSAGE value="added TreeView" />
-    <option name="LAST_COMMIT_MESSAGE" value="added TreeView" />
+    <MESSAGE value="added authors to db" />
+    <option name="LAST_COMMIT_MESSAGE" value="added authors to db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

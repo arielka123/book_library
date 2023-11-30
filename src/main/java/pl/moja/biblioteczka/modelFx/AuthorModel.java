@@ -4,24 +4,38 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.moja.biblioteczka.database.dao.AuthorDao;
-import pl.moja.biblioteczka.database.dao.BookDao;
 import pl.moja.biblioteczka.database.dbuitls.DbManager;
 import pl.moja.biblioteczka.database.models.Author;
-import pl.moja.biblioteczka.database.models.Book;
 import pl.moja.biblioteczka.utils.converters.ConverterAuthor;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class AuthorModel {
     private ObjectProperty<AuthorFx> authorFxObjectProperty = new SimpleObjectProperty<>(new AuthorFx());
 
+    private ObservableList<AuthorFx>authorFxObservableList = FXCollections.observableArrayList();
+
+    public void init() throws ApplicationException {
+        AuthorDao authorDao =new AuthorDao();
+        List<Author> authorList = authorDao.queryForAll(Author.class);
+        this.authorFxObservableList.clear();
+        authorList.forEach(author->{
+           AuthorFx authorFx = ConverterAuthor.convertToAuthorFx(author);
+           this.authorFxObservableList.add(authorFx);
+        });
+
+
+        DbManager.closeConnectionSource();
+
+    }
+
     public void saveAuthorInDataBase() throws ApplicationException {
         AuthorDao authorDao = new AuthorDao();
-        Author author = ConverterAuthor.convertAuthorFxToAuthor(this.getAuthorFxObjectProperty());
+        Author author = ConverterAuthor.convertToAuthor(this.getAuthorFxObjectProperty());
         authorDao.creatOrUpdate(author);
         DbManager.closeConnectionSource();
+        this.init();
     }
 
     public AuthorFx getAuthorFxObjectProperty() {
@@ -34,5 +48,13 @@ public class AuthorModel {
 
     public void setAuthorFxObjectProperty(AuthorFx authorFxObjectProperty) {
         this.authorFxObjectProperty.set(authorFxObjectProperty);
+    }
+
+    public ObservableList<AuthorFx> getAuthorFxObservableList() {
+        return authorFxObservableList;
+    }
+
+    public void setAuthorFxObservableList(ObservableList<AuthorFx> authorFxObservableList) {
+        this.authorFxObservableList = authorFxObservableList;
     }
 }
