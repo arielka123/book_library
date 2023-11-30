@@ -3,9 +3,7 @@ package pl.moja.biblioteczka.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import pl.moja.biblioteczka.modelFx.CategoryFx;
 import pl.moja.biblioteczka.modelFx.CategoryModel;
 import pl.moja.biblioteczka.utils.DialogsUtils;
@@ -26,6 +24,9 @@ public class CategoryController {
     private  Button deleteCategoryButton;
     @FXML
     private  Button editCategoryButton;
+    @FXML
+    private TreeView<String>categoryTreeView;
+
 
     @FXML
     public void initialize() {
@@ -36,6 +37,7 @@ public class CategoryController {
             DialogsUtils.errorDialog(e.getMessage());
         }
         this.categoryComboBox.setItems(this.categoryModel.getCategoryList());
+        this.categoryTreeView.setRoot(this.categoryModel.getRoot());
         initBindings();
     }
 

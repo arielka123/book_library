@@ -6,10 +6,11 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" minWidth="-Infinity" prefHeight="300.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.moja.biblioteczka.controllers.CategoryController">
+<VBox alignment="TOP_CENTER" minWidth="-Infinity" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.moja.biblioteczka.controllers.CategoryController">
    <children>
       <HBox alignment="TOP_CENTER" fillHeight="false" layoutY="100.0" prefHeight="54.0" prefWidth="598.0" spacing="20.0">
          <children>
@@ -40,5 +41,6 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </HBox>
+      <TreeView fx:id="categoryTreeView" showRoot="false" />
    </children>
 </VBox>
