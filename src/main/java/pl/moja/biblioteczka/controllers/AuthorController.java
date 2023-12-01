@@ -1,16 +1,11 @@
 package pl.moja.biblioteczka.controllers;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
-//import pl.moja.biblioteczka.modelFx.AuthorFx;
-//import pl.moja.biblioteczka.modelFx.AuthorModel;
 import pl.moja.biblioteczka.modelFx.AuthorFx;
 import pl.moja.biblioteczka.modelFx.AuthorModel;
 import pl.moja.biblioteczka.utils.DialogsUtils;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
-
-import java.sql.SQLException;
 
 public class AuthorController {
     @FXML
@@ -45,6 +40,12 @@ public class AuthorController {
         this.nameColumn.setCellValueFactory(cellData->cellData.getValue().nameProperty());
         this.surnameColumn.setCellValueFactory(cellData->cellData.getValue().surnameProperty());
 
+        this.nameColumn.setCellFactory(TextFieldTableCell.forTableColumn()); //uaktywnia komórki w tableView
+        this.surnameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        this.authorTableView.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) ->{
+            this.authorModel.setAuthorFxObjectPropertyEdit(newValue);//przekazuje edytowaną wartość
+        } );
     }
 
 
@@ -59,6 +60,25 @@ public class AuthorController {
         this.nameTextField.clear();
         this.surnameTextField.clear();
 
+    }
+
+    public void OnEditCommitName(TableColumn.CellEditEvent<AuthorFx, String> authorFxStringCellEditEvent) {
+        String newValue = authorFxStringCellEditEvent.getNewValue();
+        this.authorModel.getAuthorFxObjectPropertyEdit().setName(newValue);
+        updateInDatabase();
+    }
+
+    public void OnEditCommitSurname(TableColumn.CellEditEvent<AuthorFx, String> authorFxStringCellEditEvent) {
+        String newValue = authorFxStringCellEditEvent.getNewValue();
+        this.authorModel.getAuthorFxObjectPropertyEdit().setSurname(newValue);
+        updateInDatabase();
+    }
+    private void updateInDatabase() {
+        try {
+            this.authorModel.saveAuthorEditInDataBase();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
     }
 
 

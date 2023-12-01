@@ -12,7 +12,8 @@ import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 import java.util.List;
 
 public class AuthorModel {
-    private ObjectProperty<AuthorFx> authorFxObjectProperty = new SimpleObjectProperty<>(new AuthorFx());
+    private ObjectProperty<AuthorFx> authorFxObjectProperty = new SimpleObjectProperty<>(new AuthorFx()); //dodawanie wpisanego autora do bazy danych
+    private ObjectProperty<AuthorFx> authorFxObjectPropertyEdit = new SimpleObjectProperty<>(new AuthorFx());//update edytowanego autora do bazy danych
 
     private ObservableList<AuthorFx>authorFxObservableList = FXCollections.observableArrayList();
 
@@ -24,15 +25,19 @@ public class AuthorModel {
            AuthorFx authorFx = ConverterAuthor.convertToAuthorFx(author);
            this.authorFxObservableList.add(authorFx);
         });
-
-
         DbManager.closeConnectionSource();
-
     }
 
+    public void saveAuthorEditInDataBase() throws ApplicationException {
+        saveOrUpdate(this.getAuthorFxObjectPropertyEdit());
+    }
     public void saveAuthorInDataBase() throws ApplicationException {
+        saveOrUpdate(this.getAuthorFxObjectProperty());
+    }
+
+    private void saveOrUpdate(AuthorFx AuthorFxObjectPropertyEdit) throws ApplicationException {
         AuthorDao authorDao = new AuthorDao();
-        Author author = ConverterAuthor.convertToAuthor(this.getAuthorFxObjectProperty());
+        Author author = ConverterAuthor.convertToAuthor(AuthorFxObjectPropertyEdit);
         authorDao.creatOrUpdate(author);
         DbManager.closeConnectionSource();
         this.init();
@@ -56,5 +61,17 @@ public class AuthorModel {
 
     public void setAuthorFxObservableList(ObservableList<AuthorFx> authorFxObservableList) {
         this.authorFxObservableList = authorFxObservableList;
+    }
+
+    public AuthorFx getAuthorFxObjectPropertyEdit() {
+        return authorFxObjectPropertyEdit.get();
+    }
+
+    public ObjectProperty<AuthorFx> authorFxObjectPropertyEditProperty() {
+        return authorFxObjectPropertyEdit;
+    }
+
+    public void setAuthorFxObjectPropertyEdit(AuthorFx authorFxObjectPropertyEdit) {
+        this.authorFxObjectPropertyEdit.set(authorFxObjectPropertyEdit);
     }
 }
