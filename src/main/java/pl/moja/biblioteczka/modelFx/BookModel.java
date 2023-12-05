@@ -5,7 +5,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.moja.biblioteczka.database.dao.AuthorDao;
 import pl.moja.biblioteczka.database.dao.CategoryDao;
-import pl.moja.biblioteczka.database.dbuitls.DbManager;
 import pl.moja.biblioteczka.database.models.Author;
 import pl.moja.biblioteczka.database.models.Category;
 import pl.moja.biblioteczka.utils.converters.ConverterAuthor;
@@ -34,7 +33,6 @@ public class BookModel {
             CategoryFx categoryFx = ConverterCategory.convertToCategoryFx(c);
             categoryFxObservableList.add(categoryFx);
         });
-        DbManager.closeConnectionSource();
     }
 
     private void initAuthorList() throws ApplicationException {
@@ -46,7 +44,6 @@ public class BookModel {
             AuthorFx authorFx = ConverterAuthor.convertToAuthorFx(c);
             authorFxObservableList.add(authorFx);
         });
-        DbManager.closeConnectionSource();
     }
 
     public BookFx getBookFxObjectProperty() {

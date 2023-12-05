@@ -4,7 +4,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.moja.biblioteczka.database.dao.AuthorDao;
-import pl.moja.biblioteczka.database.dbuitls.DbManager;
 import pl.moja.biblioteczka.database.models.Author;
 import pl.moja.biblioteczka.utils.converters.ConverterAuthor;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
@@ -25,7 +24,6 @@ public class AuthorModel {
            AuthorFx authorFx = ConverterAuthor.convertToAuthorFx(author);
            this.authorFxObservableList.add(authorFx);
         });
-        DbManager.closeConnectionSource();
     }
 
     public void saveAuthorEditInDataBase() throws ApplicationException {
@@ -38,7 +36,6 @@ public class AuthorModel {
     public void deleteAuthorInDatBase() throws ApplicationException {
         AuthorDao authorDao = new AuthorDao();
         authorDao.deleteById(Author.class,this.getAuthorFxObjectPropertyEdit().getId());
-        DbManager.closeConnectionSource();
         this.init();
     }
 
@@ -46,7 +43,6 @@ public class AuthorModel {
         AuthorDao authorDao = new AuthorDao();
         Author author = ConverterAuthor.convertToAuthor(AuthorFxObjectPropertyEdit);
         authorDao.creatOrUpdate(author);
-        DbManager.closeConnectionSource();
         this.init();
     }
 

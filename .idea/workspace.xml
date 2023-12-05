@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="implementation addBook.fxml">
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/AuthorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/BookModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/BookModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddBook.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddBook.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701791579601</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="implementation addBook.fxml">
+      <created>1701812914427</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701812914428</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,7 +275,8 @@
     <MESSAGE value="tableView edit for authors" />
     <MESSAGE value="contextMenu in Table View" />
     <MESSAGE value="implementation addBook.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation addBook.fxml" />
+    <MESSAGE value="code refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
