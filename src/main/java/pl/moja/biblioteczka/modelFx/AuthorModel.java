@@ -12,10 +12,10 @@ import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 import java.util.List;
 
 public class AuthorModel {
-    private ObjectProperty<AuthorFx> authorFxObjectProperty = new SimpleObjectProperty<>(new AuthorFx()); //dodawanie wpisanego autora do bazy danych
-    private ObjectProperty<AuthorFx> authorFxObjectPropertyEdit = new SimpleObjectProperty<>(new AuthorFx());//update edytowanego autora do bazy danych
+    private final ObjectProperty<AuthorFx> authorFxObjectProperty = new SimpleObjectProperty<>(new AuthorFx()); //dodawanie wpisanego autora do bazy danych
+    private final ObjectProperty<AuthorFx> authorFxObjectPropertyEdit = new SimpleObjectProperty<>(new AuthorFx());//update edytowanego autora do bazy danych
 
-    private ObservableList<AuthorFx>authorFxObservableList = FXCollections.observableArrayList();
+    private final ObservableList<AuthorFx> authorFxObservableList = FXCollections.observableArrayList();
 
     public void init() throws ApplicationException {
         AuthorDao authorDao =new AuthorDao();
@@ -35,6 +35,13 @@ public class AuthorModel {
         saveOrUpdate(this.getAuthorFxObjectProperty());
     }
 
+    public void deleteAuthorInDatBase() throws ApplicationException {
+        AuthorDao authorDao = new AuthorDao();
+        authorDao.deleteById(Author.class,this.getAuthorFxObjectPropertyEdit().getId());
+        DbManager.closeConnectionSource();
+        this.init();
+    }
+
     private void saveOrUpdate(AuthorFx AuthorFxObjectPropertyEdit) throws ApplicationException {
         AuthorDao authorDao = new AuthorDao();
         Author author = ConverterAuthor.convertToAuthor(AuthorFxObjectPropertyEdit);
@@ -51,25 +58,25 @@ public class AuthorModel {
         return authorFxObjectProperty;
     }
 
-    public void setAuthorFxObjectProperty(AuthorFx authorFxObjectProperty) {
-        this.authorFxObjectProperty.set(authorFxObjectProperty);
-    }
+//    public void setAuthorFxObjectProperty(AuthorFx authorFxObjectProperty) {
+//        this.authorFxObjectProperty.set(authorFxObjectProperty);
+//    }
 
     public ObservableList<AuthorFx> getAuthorFxObservableList() {
         return authorFxObservableList;
     }
 
-    public void setAuthorFxObservableList(ObservableList<AuthorFx> authorFxObservableList) {
-        this.authorFxObservableList = authorFxObservableList;
-    }
+//    public void setAuthorFxObservableList(ObservableList<AuthorFx> authorFxObservableList) {
+//        this.authorFxObservableList = authorFxObservableList;
+//    }
 
     public AuthorFx getAuthorFxObjectPropertyEdit() {
         return authorFxObjectPropertyEdit.get();
     }
 
-    public ObjectProperty<AuthorFx> authorFxObjectPropertyEditProperty() {
-        return authorFxObjectPropertyEdit;
-    }
+//    public ObjectProperty<AuthorFx> authorFxObjectPropertyEditProperty() {
+//        return authorFxObjectPropertyEdit;
+//    }
 
     public void setAuthorFxObjectPropertyEdit(AuthorFx authorFxObjectPropertyEdit) {
         this.authorFxObjectPropertyEdit.set(authorFxObjectPropertyEdit);

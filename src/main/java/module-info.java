@@ -11,6 +11,8 @@ module pl.moja.biblioteczka {
 
 
     exports pl.moja.biblioteczka;
+    exports pl.moja.biblioteczka.modelFx;
     exports pl.moja.biblioteczka.controllers;
     exports pl.moja.biblioteczka.database.models;
+    exports pl.moja.biblioteczka.utils.exceptions;
 }

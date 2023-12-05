@@ -32,10 +32,11 @@ public class AuthorController {
         } catch (ApplicationException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
-        authorModel.authorFxObjectPropertyProperty().get().nameProperty().bind(this.nameTextField.textProperty());
-        this.authorModel.authorFxObjectPropertyProperty().get().surnameProperty().bind(this.surnameTextField.textProperty()); // oszczedność. Automatycznie dane wpisane do texfilda znajdują się w obiekcie
-        this.addButton.disableProperty().bind(this.nameTextField.textProperty().isEmpty().or(this.surnameTextField.textProperty().isEmpty()));
+        bindings();
+        bindingsTableView();
+    }
 
+    private void bindingsTableView() {
         this.authorTableView.setItems(this.authorModel.getAuthorFxObservableList());
         this.nameColumn.setCellValueFactory(cellData->cellData.getValue().nameProperty());
         this.surnameColumn.setCellValueFactory(cellData->cellData.getValue().surnameProperty());
@@ -44,10 +45,17 @@ public class AuthorController {
         this.surnameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 
         this.authorTableView.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) ->{
-            this.authorModel.setAuthorFxObjectPropertyEdit(newValue);//przekazuje edytowaną wartość
+            this.authorModel.setAuthorFxObjectPropertyEdit(newValue);//przekazuje nasłuchiwaną, klikniętą wartość
         } );
     }
 
+    private void bindings() {
+        authorModel.authorFxObjectPropertyProperty().get().nameProperty().bind(this.nameTextField.textProperty());
+        this.authorModel.authorFxObjectPropertyProperty().get().surnameProperty().bind(this.surnameTextField.textProperty()); // oszczedność. Automatycznie dane wpisane do texfilda znajdują się w obiekcie
+        this.addButton.disableProperty().bind(this.nameTextField.textProperty().isEmpty().or(this.surnameTextField.textProperty().isEmpty()));
+
+        this.deleteMenuItem.disableProperty().bind( this.authorTableView.getSelectionModel().selectedItemProperty().isNull());
+    }
 
     public void OnActionAddAuthor() {
         System.out.println(this.authorModel.getAuthorFxObjectProperty().getName());
@@ -59,7 +67,6 @@ public class AuthorController {
         }
         this.nameTextField.clear();
         this.surnameTextField.clear();
-
     }
 
     public void OnEditCommitName(TableColumn.CellEditEvent<AuthorFx, String> authorFxStringCellEditEvent) {
@@ -82,4 +89,11 @@ public class AuthorController {
     }
 
 
+    public void deleteAuthorOnAction() {
+        try {
+            authorModel.deleteAuthorInDatBase();
+        } catch (ApplicationException e) {
+           DialogsUtils.errorDialog(e.getMessage());
+        }
+    }
 }
