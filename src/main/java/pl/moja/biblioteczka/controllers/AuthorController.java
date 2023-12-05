@@ -58,8 +58,8 @@ public class AuthorController {
     }
 
     public void OnActionAddAuthor() {
-        System.out.println(this.authorModel.getAuthorFxObjectProperty().getName());
-        System.out.println(this.authorModel.getAuthorFxObjectProperty().getSurname());
+//        System.out.println(this.authorModel.getAuthorFxObjectProperty().getName());
+//        System.out.println(this.authorModel.getAuthorFxObjectProperty().getSurname());
         try {
             this.authorModel.saveAuthorInDataBase();
         } catch (ApplicationException e) {

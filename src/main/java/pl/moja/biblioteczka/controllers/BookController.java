@@ -8,14 +8,13 @@ import pl.moja.biblioteczka.utils.DialogsUtils;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 
 public class BookController {
-    @FXML
-    private Button addButton;
+
     @FXML
     private ComboBox<CategoryFx> categoryComboBox;
     @FXML
     private ComboBox<AuthorFx> authorComboBox;
     @FXML
-    private TextArea descTextArea;
+    private TextArea descriptionTextArea;
     @FXML
     private Slider ratingSlider;
     @FXML
@@ -28,7 +27,7 @@ public class BookController {
     private BookModel bookModel;
 
     @FXML
-    public void initialize() {
+    public void initialize(){
         this.bookModel = new BookModel();
         try {
             this.bookModel.init();
@@ -36,51 +35,29 @@ public class BookController {
             DialogsUtils.errorDialog(e.getMessage());
         }
         bindings();
-        validation();
     }
 
-    private void validation() {
-        this.addButton.disableProperty().bind(this.authorComboBox.valueProperty().isNull()
-                .or(this.categoryComboBox.valueProperty().isNull())
-                .or(this.titleTextField.textProperty().isEmpty())
-                .or(this.descTextArea.textProperty().isEmpty())
-                .or(this.isbnTextField.textProperty().isEmpty())
-                .or(this.releaseDatePicker.valueProperty().isNull()));
-    }
-
-    public void bindings() {
+    private void bindings() {
         this.categoryComboBox.setItems(this.bookModel.getCategoryFxObservableList());
         this.authorComboBox.setItems(this.bookModel.getAuthorFxObservableList());
 
-        this.authorComboBox.valueProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().authorFxProperty());
-        this.categoryComboBox.valueProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().categoryFxProperty());
-        this.titleTextField.textProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().titleProperty());
-        this.descTextArea.textProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().descriptionProperty());
-        this.ratingSlider.valueProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().ratingProperty());
-        this.isbnTextField.textProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().isbnProperty());
-        this.releaseDatePicker.valueProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().releaseDateProperty());
+        this.bookModel.getBookFxObjectProperty().categoryFxProperty().bind(categoryComboBox.valueProperty());
+        this.bookModel.getBookFxObjectProperty().authorFxProperty().bind(authorComboBox.valueProperty());
+        this.bookModel.getBookFxObjectProperty().descriptionProperty().bind(descriptionTextArea.textProperty());
+        this.bookModel.getBookFxObjectProperty().ratingProperty().bind(ratingSlider.valueProperty());
+        this.bookModel.getBookFxObjectProperty().isbnProperty().bind(isbnTextField.textProperty());
+        this.bookModel.getBookFxObjectProperty().releaseDateProperty().bind(releaseDatePicker.valueProperty());
+        this.bookModel.getBookFxObjectProperty().titleProperty().bind(titleTextField.textProperty());
     }
 
     public void addBookOnAction() {
-        try {
-            this.bookModel.saveBookInDataBase();
-            clearFields();
-        } catch (ApplicationException e) {
-            DialogsUtils.errorDialog(e.getMessage());
-        }
-    }
-
-    private void clearFields() {
-        this.authorComboBox.getSelectionModel().clearSelection();
-        this.categoryComboBox.getSelectionModel().clearSelection();
-        this.titleTextField.clear();
-        this.descTextArea.clear();
-        this.ratingSlider.setValue(1);
+//        System.out.println(this.bookModel.getBookFxObjectProperty().toString());
+        this.categoryComboBox.setItems(null);
+        this.authorComboBox.setItems(null);
         this.isbnTextField.clear();
-        this.releaseDatePicker.getEditor().clear();
-    }
-
-    public BookModel getBookModel() {
-        return bookModel;
+        this.ratingSlider.setValue(0);
+        this.descriptionTextArea.clear();
+        this.titleTextField.clear();
+        this.releaseDatePicker.valueProperty().setValue(null);
     }
 }
