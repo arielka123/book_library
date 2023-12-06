@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="code refactoring">
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="book is added to database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/BookModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/BookModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/ListBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/ListBooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddBook.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddBook.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddCategory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddCategory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ListBooks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ListBooks.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701814215868</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="book is added to database">
+      <created>1701864497188</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701864497188</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +291,8 @@
     <MESSAGE value="contextMenu in Table View" />
     <MESSAGE value="implementation addBook.fxml" />
     <MESSAGE value="code refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring" />
+    <MESSAGE value="book is added to database" />
+    <option name="LAST_COMMIT_MESSAGE" value="book is added to database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

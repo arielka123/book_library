@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" minWidth="-Infinity" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.moja.biblioteczka.controllers.CategoryController">
+<VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.moja.biblioteczka.controllers.CategoryController">
    <children>
-      <HBox alignment="TOP_CENTER" fillHeight="false" layoutY="100.0" prefHeight="54.0" prefWidth="598.0" spacing="20.0">
+      <HBox alignment="TOP_CENTER" fillHeight="false" layoutY="100.0" spacing="20.0">
          <children>
             <Label text="%add.category">
                <cursor>
@@ -43,4 +43,7 @@
       </HBox>
       <TreeView fx:id="categoryTreeView" showRoot="false" />
    </children>
+   <padding>
+      <Insets bottom="20.0" top="10.0" />
+   </padding>
 </VBox>
