@@ -7,16 +7,17 @@ import com.j256.ormlite.table.TableUtils;
 import pl.moja.biblioteczka.database.models.Author;
 import pl.moja.biblioteczka.database.models.Book;
 import pl.moja.biblioteczka.database.models.Category;
+import pl.moja.biblioteczka.utils.FillDatabase;
 
 import java.sql.SQLException;
 
 public class DbManager {
     private static final Logger LOGGER = LoggerFactory.getLogger(DbManager.class);
 
-    private static final String JDBC_DRIVER_HD = "jdbc:h2:./database2";
+//    private static final String JDBC_DRIVER_HD = "jdbc:h2:./database2";
     private static final String JDBC_DRIVER_SQLITE = "jdbc:sqlite:database.db";
-    private static final String USER = "admin";
-    private static final String PASS = "admin";
+//    private static final String USER = "admin";
+//    private static final String PASS = "admin";
 
     public DbManager() throws Exception {
         ConnectionSource connectionSource = new JdbcConnectionSource(JDBC_DRIVER_SQLITE);
@@ -27,9 +28,14 @@ public class DbManager {
 
     public static void initDatabase(){
         createConnectionSource();
-       //dropTable(); //zakomentuj, żeby nie kasować za każym razem tabel w bazie
-       //createTable();
-       closeConnectionSource();
+        //createNewTables();
+        closeConnectionSource();
+    }
+
+    private static void createNewTables() {
+        dropTable();
+        createTable();
+        FillDatabase.fillDatabase();
     }
 
     private static void createConnectionSource(){

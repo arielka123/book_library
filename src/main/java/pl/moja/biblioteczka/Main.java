@@ -2,14 +2,10 @@ package pl.moja.biblioteczka;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import pl.moja.biblioteczka.utils.FxmlUtils;
 import pl.moja.biblioteczka.database.dbuitls.DbManager;
-import pl.moja.biblioteczka.utils.FillDatabase;
-
 import java.util.ResourceBundle;
 
 public class Main extends Application {
@@ -34,7 +30,6 @@ public class Main extends Application {
         primaryStage.show();
 
         DbManager.initDatabase();
-//        FillDatabase.fillDatabase();
     }
 }
 

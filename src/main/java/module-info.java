@@ -9,7 +9,6 @@ module pl.moja.biblioteczka {
     opens pl.moja.biblioteczka.controllers to javafx.fxml;
     opens pl.moja.biblioteczka.database.models to ormlite.jdbc;
 
-
     exports pl.moja.biblioteczka;
     exports pl.moja.biblioteczka.modelFx;
     exports pl.moja.biblioteczka.controllers;
