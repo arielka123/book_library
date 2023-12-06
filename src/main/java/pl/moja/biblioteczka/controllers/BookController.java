@@ -52,6 +52,15 @@ public class BookController {
 
     public void addBookOnAction() {
 //        System.out.println(this.bookModel.getBookFxObjectProperty().toString());
+        try {
+            this.bookModel.saveBookInDataBase();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
+        clearInputs();
+    }
+
+    private void clearInputs() {
         this.categoryComboBox.setItems(null);
         this.authorComboBox.setItems(null);
         this.isbnTextField.clear();

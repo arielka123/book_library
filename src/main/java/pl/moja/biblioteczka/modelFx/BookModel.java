@@ -4,10 +4,13 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.moja.biblioteczka.database.dao.AuthorDao;
+import pl.moja.biblioteczka.database.dao.BookDao;
 import pl.moja.biblioteczka.database.dao.CategoryDao;
 import pl.moja.biblioteczka.database.models.Author;
+import pl.moja.biblioteczka.database.models.Book;
 import pl.moja.biblioteczka.database.models.Category;
 import pl.moja.biblioteczka.utils.converters.ConverterAuthor;
+import pl.moja.biblioteczka.utils.converters.ConverterBook;
 import pl.moja.biblioteczka.utils.converters.ConverterCategory;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 
@@ -44,6 +47,21 @@ public class BookModel {
             AuthorFx authorFx = ConverterAuthor.convertToAuthorFx(c);
             authorFxObservableList.add(authorFx);
         });
+    }
+
+    public void saveBookInDataBase() throws ApplicationException {
+        Book book = ConverterBook.convertToBook(this.getBookFxObjectProperty());
+        CategoryDao categoryDao = new CategoryDao();
+        Category category = categoryDao.findById(Category.class, this.getBookFxObjectProperty().getCategoryFx().getId());
+
+        AuthorDao authorDao = new AuthorDao();
+        Author author = authorDao.findById(Author.class, this.getBookFxObjectProperty().getAuthorFx().getId());
+
+        book.setAuthor(author);
+        book.setCategory(category);
+
+        BookDao bookDao = new BookDao();
+        bookDao.creatOrUpdate(book);
     }
 
     public BookFx getBookFxObjectProperty() {
