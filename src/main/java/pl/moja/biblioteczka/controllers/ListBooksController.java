@@ -15,9 +15,9 @@ import java.time.LocalDate;
 
 public class ListBooksController {
     @FXML
-    public ComboBox<BookFx> categoryComboBox;
+    private ComboBox<CategoryFx> categoryComboBox;
     @FXML
-    public ComboBox<BookFx> authorComboBox;
+    private ComboBox<AuthorFx> authorComboBox;
     @FXML
     private TableView<BookFx> booksTableView;
     @FXML
@@ -46,6 +46,11 @@ public class ListBooksController {
             DialogsUtils.errorDialog(e.getMessage());
         }
 
+        this.categoryComboBox.setItems(listBookModel.getCategoryFxObservableList());
+        this.authorComboBox.setItems(listBookModel.getAuthorFxObservableList());
+        this.listBookModel.categoryFxObjectPropertyProperty().bind(this.categoryComboBox.valueProperty());
+        this.listBookModel.authorFxObjectPropertyProperty().bind(this.authorComboBox.valueProperty());
+
         this.booksTableView.setItems(this.listBookModel.getBookFxObservableList());
         this.titleColumn.setCellValueFactory(cellData->cellData.getValue().titleProperty());
         this.authorColumn.setCellValueFactory(cellData->cellData.getValue().authorFxProperty());
@@ -56,4 +61,16 @@ public class ListBooksController {
         this.releaseColumn.setCellValueFactory(cellData->cellData.getValue().releaseDateProperty());
     }
 
+    public void filterOnActionComboBox() {
+//        System.out.println(this.listBookModel.getCategoryFxObjectProperty());
+        this.listBookModel.filterBooksList();
+    }
+
+    public void clearAuthorComboBox() {
+        this.authorComboBox.getSelectionModel().clearSelection();
+    }
+
+    public void clearCategoryComboBox() {
+        this.categoryComboBox.getSelectionModel().clearSelection();
+    }
 }

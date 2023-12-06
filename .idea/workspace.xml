@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="added data to listBooks">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="added filters to listBooks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/ListBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/ListBooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbuitls/DbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dbuitls/DbManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/ListBookModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/ListBookModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ListBooks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ListBooks.fxml" afterDir="false" />
     </list>
@@ -255,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701867218499</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added data to listBooks">
+      <created>1701893968797</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701893968797</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,7 +306,8 @@
     <MESSAGE value="book is added to database" />
     <MESSAGE value="added ListBooks.fxml" />
     <MESSAGE value="added data to listBooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="added data to listBooks" />
+    <MESSAGE value="added filters to listBooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="added filters to listBooks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
