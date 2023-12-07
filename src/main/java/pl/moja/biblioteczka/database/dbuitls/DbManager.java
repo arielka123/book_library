@@ -28,7 +28,7 @@ public class DbManager {
 
     public static void initDatabase(){
         createConnectionSource();
-        //createNewTables();
+        createNewTables();
         closeConnectionSource();
     }
 

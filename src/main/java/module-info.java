@@ -1,4 +1,4 @@
-module pl.moja.biblioteczka {
+module pl.moja.biblioteczka.Main {
     requires javafx.controls;
     requires javafx.graphics;
     requires  javafx.fxml;

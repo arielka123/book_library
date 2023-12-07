@@ -1,9 +1,10 @@
 package pl.moja.biblioteczka.controllers;
 
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import pl.moja.biblioteczka.modelFx.AuthorFx;
 import pl.moja.biblioteczka.modelFx.BookFx;
 import pl.moja.biblioteczka.modelFx.CategoryFx;
@@ -34,6 +35,8 @@ public class ListBooksController {
     private TableColumn<BookFx,String> isbnColumn;
     @FXML
     private TableColumn<BookFx, LocalDate> releaseColumn;
+    @FXML
+    private TableColumn<BookFx,BookFx> deleteColumn;
 
     private ListBookModel listBookModel;
 
@@ -59,10 +62,40 @@ public class ListBooksController {
         this.descColumn.setCellValueFactory(cellData->cellData.getValue().descriptionProperty());
         this.ratingColumn.setCellValueFactory(cellData->cellData.getValue().ratingProperty());
         this.releaseColumn.setCellValueFactory(cellData->cellData.getValue().releaseDateProperty());
+        this.deleteColumn.setCellValueFactory(cellData->new SimpleObjectProperty<>(cellData.getValue()) );
+
+        this.deleteColumn.setCellFactory(param -> new TableCell<>() {
+            Button button = createDeleteButton();
+
+            @Override
+            protected void updateItem(BookFx item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (!empty) {
+                    setGraphic(button);
+                    button.setOnAction(event -> {
+                        try {
+                            listBookModel.deleteBook(item);
+                        } catch (ApplicationException e) {
+                            DialogsUtils.errorDialog(e.getMessage());
+                        }
+                    });
+                } else {
+                    setGraphic(null);
+                }
+            }
+        });
+    }
+
+    private Button createDeleteButton(){
+        Button button = new Button();
+        Image image = new Image(this.getClass().getResource("/icons/trash.png").toString());
+        ImageView imageView = new ImageView(image);
+        button.setGraphic(imageView);
+        return button;
     }
 
     public void filterOnActionComboBox() {
-//        System.out.println(this.listBookModel.getCategoryFxObjectProperty());
         this.listBookModel.filterBooksList();
     }
 
