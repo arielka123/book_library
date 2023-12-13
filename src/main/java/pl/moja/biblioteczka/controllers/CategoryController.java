@@ -1,7 +1,5 @@
 package pl.moja.biblioteczka.controllers;
 
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import pl.moja.biblioteczka.modelFx.CategoryFx;
@@ -9,7 +7,7 @@ import pl.moja.biblioteczka.modelFx.CategoryModel;
 import pl.moja.biblioteczka.utils.DialogsUtils;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 
-import java.sql.SQLOutput;
+import java.sql.SQLException;
 
 public class CategoryController {
 
@@ -19,7 +17,6 @@ public class CategoryController {
     private TextField categoryTextField;
     @FXML
     private ComboBox<CategoryFx> categoryComboBox;
-    private CategoryModel categoryModel;
     @FXML
     private  Button deleteCategoryButton;
     @FXML
@@ -27,6 +24,7 @@ public class CategoryController {
     @FXML
     private TreeView<String>categoryTreeView;
 
+    private CategoryModel categoryModel;
 
     @FXML
     public void initialize() {
@@ -62,7 +60,7 @@ public class CategoryController {
     public void OnActionDeleteCategory(){
         try {
             categoryModel.deleteCategoryById();
-        } catch (ApplicationException e) {
+        } catch (ApplicationException | SQLException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
     }

@@ -7,6 +7,8 @@ import pl.moja.biblioteczka.modelFx.AuthorModel;
 import pl.moja.biblioteczka.utils.DialogsUtils;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
+
 public class AuthorController {
     @FXML
     private TextField nameTextField;
@@ -92,8 +94,8 @@ public class AuthorController {
     public void deleteAuthorOnAction() {
         try {
             authorModel.deleteAuthorInDatBase();
-        } catch (ApplicationException e) {
-           DialogsUtils.errorDialog(e.getMessage());
+        } catch (ApplicationException | SQLException e) {
+            DialogsUtils.errorDialog(e.getMessage());
         }
     }
 }

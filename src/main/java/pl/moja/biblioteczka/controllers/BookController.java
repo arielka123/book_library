@@ -73,7 +73,7 @@ public class BookController {
         }
     }
 
-    //TODO nowa formatka dla edycji i nowy funcja editBookOnAction()
+    //TODO nowa formatka dla edycji i funkcja editBookOnAction()
 
     private void clearFields() {
         this.authorComboBox.getSelectionModel().clearSelection();
