@@ -13,12 +13,11 @@ import pl.moja.biblioteczka.utils.converters.ConverterAuthor;
 import pl.moja.biblioteczka.utils.converters.ConverterBook;
 import pl.moja.biblioteczka.utils.converters.ConverterCategory;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
-
 import java.util.List;
 
 public class BookModel {
-    private final ObjectProperty<BookFx> bookFxObjectProperty = new SimpleObjectProperty<>(new BookFx());
 
+    private final ObjectProperty<BookFx> bookFxObjectProperty = new SimpleObjectProperty<>(new BookFx());
     //aby działały comboBoxy
     private final ObservableList<AuthorFx> authorFxObservableList = FXCollections.observableArrayList();
     private final ObservableList<CategoryFx> categoryFxObservableList = FXCollections.observableArrayList();
@@ -72,9 +71,9 @@ public class BookModel {
 //        return bookFxObjectProperty;
 //    }
 
-//    public void setBookFxObjectProperty(BookFx bookFxObjectProperty) {
-//        this.bookFxObjectProperty.set(bookFxObjectProperty);
-//    }
+    public void setBookFxObjectProperty(BookFx bookFxObjectProperty) {
+        this.bookFxObjectProperty.set(bookFxObjectProperty);
+    }
 
     public ObservableList<AuthorFx> getAuthorFxObservableList() {
         return authorFxObservableList;

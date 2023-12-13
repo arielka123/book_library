@@ -2,17 +2,25 @@ package pl.moja.biblioteczka.controllers;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import pl.moja.biblioteczka.modelFx.AuthorFx;
 import pl.moja.biblioteczka.modelFx.BookFx;
 import pl.moja.biblioteczka.modelFx.CategoryFx;
 import pl.moja.biblioteczka.modelFx.ListBookModel;
 import pl.moja.biblioteczka.utils.DialogsUtils;
+import pl.moja.biblioteczka.utils.FxmlUtils;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class ListBooksController {
     @FXML
@@ -37,11 +45,13 @@ public class ListBooksController {
     private TableColumn<BookFx, LocalDate> releaseColumn;
     @FXML
     private TableColumn<BookFx,BookFx> deleteColumn;
+    @FXML
+    private TableColumn<BookFx,BookFx> editColumn;
 
     private ListBookModel listBookModel;
 
     @FXML
-    void initialize() {
+    public void initialize() {
         this.listBookModel = new ListBookModel();
         try {
             this.listBookModel.init();
@@ -63,9 +73,10 @@ public class ListBooksController {
         this.ratingColumn.setCellValueFactory(cellData->cellData.getValue().ratingProperty());
         this.releaseColumn.setCellValueFactory(cellData->cellData.getValue().releaseDateProperty());
         this.deleteColumn.setCellValueFactory(cellData->new SimpleObjectProperty<>(cellData.getValue()) );
+        this.editColumn.setCellValueFactory(cellData->new SimpleObjectProperty<>(cellData.getValue()) );
 
         this.deleteColumn.setCellFactory(param -> new TableCell<>() {
-            Button button = createDeleteButton();
+            Button button = createButton("/icons/trash.png");
 
             @Override
             protected void updateItem(BookFx item, boolean empty) {
@@ -73,6 +84,7 @@ public class ListBooksController {
 
                 if (!empty) {
                     setGraphic(button);
+                    setAlignment(Pos.CENTER);
                     button.setOnAction(event -> {
                         try {
                             listBookModel.deleteBook(item);
@@ -85,12 +97,48 @@ public class ListBooksController {
                 }
             }
         });
+
+        this.editColumn.setCellFactory(param-> new TableCell<>(){
+            Button button = createButton("/icons/edit.png");
+            @Override
+            protected void updateItem(BookFx item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (!empty) {
+                    setGraphic(button);
+                    setAlignment(Pos.CENTER);
+                    button.setOnAction(event -> {
+                        FXMLLoader loader = FxmlUtils.getLoader("/fxml/AddBook.fxml");
+                        Scene scene = null;
+                         try {
+                             scene = new Scene(loader.load());
+                        } catch (IOException e) {
+                            DialogsUtils.errorDialog(e.getMessage());
+                        }
+                        BookController controller = loader.getController();
+                        controller.getBookModel().setBookFxObjectProperty(item);
+                        controller.bindings();
+
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.setTitle(FxmlUtils.getResourceBundle().getString("edit"));
+                        stage.initModality(Modality.APPLICATION_MODAL);
+                        stage.showAndWait();
+                    });
+                } else {
+                    setGraphic(null);
+                }
+            }
+        });
     }
 
-    private Button createDeleteButton(){
+    private Button createButton(String path){
         Button button = new Button();
-        Image image = new Image(this.getClass().getResource("/icons/trash.png").toString());
+        Image image = new Image(Objects.requireNonNull(this.getClass().getResource(path)).toString());
         ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(20);
+        imageView.setPreserveRatio(true);
+
         button.setGraphic(imageView);
         return button;
     }

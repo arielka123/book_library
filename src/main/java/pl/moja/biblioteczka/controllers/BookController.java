@@ -37,17 +37,18 @@ public class BookController {
         bindings();
     }
 
-    private void bindings() {
+    public void bindings() {
         this.categoryComboBox.setItems(this.bookModel.getCategoryFxObservableList());
         this.authorComboBox.setItems(this.bookModel.getAuthorFxObservableList());
 
-        this.bookModel.getBookFxObjectProperty().categoryFxProperty().bind(categoryComboBox.valueProperty());
-        this.bookModel.getBookFxObjectProperty().authorFxProperty().bind(authorComboBox.valueProperty());
-        this.bookModel.getBookFxObjectProperty().descriptionProperty().bind(descriptionTextArea.textProperty());
-        this.bookModel.getBookFxObjectProperty().ratingProperty().bind(ratingSlider.valueProperty());
-        this.bookModel.getBookFxObjectProperty().isbnProperty().bind(isbnTextField.textProperty());
-        this.bookModel.getBookFxObjectProperty().releaseDateProperty().bind(releaseDatePicker.valueProperty());
-        this.bookModel.getBookFxObjectProperty().titleProperty().bind(titleTextField.textProperty());
+        this.authorComboBox.valueProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().authorFxProperty());
+        this.categoryComboBox.valueProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().categoryFxProperty());
+        this.titleTextField.textProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().titleProperty());
+        this.descriptionTextArea.textProperty().bindBidirectional(bookModel.getBookFxObjectProperty().descriptionProperty());
+
+        this.ratingSlider.valueProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().ratingProperty());
+        this.isbnTextField.textProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().isbnProperty());
+        this.releaseDatePicker.valueProperty().bindBidirectional(this.bookModel.getBookFxObjectProperty().releaseDateProperty());
     }
 
     public void addBookOnAction() {
@@ -57,10 +58,10 @@ public class BookController {
         } catch (ApplicationException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
-        clearInputs();
+//        clearInputs(); //przy dodawaniu czysci ale przy edycji braki w tabeli
     }
 
-    private void clearInputs() {
+    public void clearInputs() {
         this.categoryComboBox.setItems(null);
         this.authorComboBox.setItems(null);
         this.isbnTextField.clear();
@@ -69,4 +70,8 @@ public class BookController {
         this.titleTextField.clear();
         this.releaseDatePicker.valueProperty().setValue(null);
     }
+    public BookModel getBookModel() {
+        return bookModel;
+    }
+
 }
