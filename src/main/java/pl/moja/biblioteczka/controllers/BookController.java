@@ -10,6 +10,8 @@ import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
 public class BookController {
 
     @FXML
+    private Button addButton;
+    @FXML
     private ComboBox<CategoryFx> categoryComboBox;
     @FXML
     private ComboBox<AuthorFx> authorComboBox;
@@ -35,6 +37,16 @@ public class BookController {
             DialogsUtils.errorDialog(e.getMessage());
         }
         bindings();
+        validation();
+    }
+
+    private void validation() {
+        this.addButton.disableProperty().bind(this.authorComboBox.valueProperty().isNull()
+                .or(this.categoryComboBox.valueProperty().isNull())
+                .or(this.titleTextField.textProperty().isEmpty())
+                .or(this.descriptionTextArea.textProperty().isEmpty())
+                .or(this.isbnTextField.textProperty().isEmpty())
+                .or(this.releaseDatePicker.valueProperty().isNull()));
     }
 
     public void bindings() {
@@ -55,23 +67,25 @@ public class BookController {
 //        System.out.println(this.bookModel.getBookFxObjectProperty().toString());
         try {
             this.bookModel.saveBookInDataBase();
+            clearFields(); //Todo tylko dla zapisywania nowych a nie dla edycji
         } catch (ApplicationException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
-//        clearInputs(); //przy dodawaniu czysci ale przy edycji braki w tabeli
     }
 
-    public void clearInputs() {
-        this.categoryComboBox.setItems(null);
-        this.authorComboBox.setItems(null);
-        this.isbnTextField.clear();
-        this.ratingSlider.setValue(0);
-        this.descriptionTextArea.clear();
+    //TODO nowa formatka dla edycji i nowy funcja editBookOnAction()
+
+    private void clearFields() {
+        this.authorComboBox.getSelectionModel().clearSelection();
+        this.categoryComboBox.getSelectionModel().clearSelection();
         this.titleTextField.clear();
-        this.releaseDatePicker.valueProperty().setValue(null);
+        this.descriptionTextArea.clear();
+        this.ratingSlider.setValue(1);
+        this.isbnTextField.clear();
+        this.releaseDatePicker.getEditor().clear();
     }
+
     public BookModel getBookModel() {
         return bookModel;
     }
-
 }
