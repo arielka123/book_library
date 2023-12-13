@@ -36,7 +36,7 @@ public class AuthorModel {
         saveOrUpdate(this.getAuthorFxObjectProperty());
     }
 
-    public void deleteAuthorInDatBase() throws ApplicationException, SQLException {
+    public void deleteAuthorInDataBase() throws ApplicationException, SQLException {
         AuthorDao authorDao = new AuthorDao();
         authorDao.deleteById(Author.class,this.getAuthorFxObjectPropertyEdit().getId());
         BookDao bookDao = new BookDao();

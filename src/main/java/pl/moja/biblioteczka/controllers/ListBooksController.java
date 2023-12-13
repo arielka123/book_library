@@ -17,8 +17,6 @@ import pl.moja.biblioteczka.modelFx.ListBookModel;
 import pl.moja.biblioteczka.utils.DialogsUtils;
 import pl.moja.biblioteczka.utils.FxmlUtils;
 import pl.moja.biblioteczka.utils.exceptions.ApplicationException;
-
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -107,14 +105,17 @@ public class ListBooksController {
                 if (!empty) {
                     setGraphic(button);
                     setAlignment(Pos.CENTER);
+
                     button.setOnAction(event -> {
-                        FXMLLoader loader = FxmlUtils.getLoader("/fxml/AddBook.fxml");
+                        FXMLLoader loader = FxmlUtils.getLoader("/fxml/EditBook.fxml");
                         Scene scene = null;
                          try {
                              scene = new Scene(loader.load());
-                        } catch (IOException e) {
-                            DialogsUtils.errorDialog(e.getMessage());
-                        }
+                        } catch (Exception e) {
+                             DialogsUtils.errorDialog(e.getMessage());
+                             throw new RuntimeException("error",e);
+                         }
+
                         BookController controller = loader.getController();
                         controller.getBookModel().setBookFxObjectProperty(item);
                         controller.bindings();

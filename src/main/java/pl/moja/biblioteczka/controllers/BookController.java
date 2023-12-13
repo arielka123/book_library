@@ -37,7 +37,9 @@ public class BookController {
             DialogsUtils.errorDialog(e.getMessage());
         }
         bindings();
-        validation();
+        if(addButton!=null) {
+            validation();
+        }
     }
 
     private void validation() {
@@ -67,13 +69,19 @@ public class BookController {
 //        System.out.println(this.bookModel.getBookFxObjectProperty().toString());
         try {
             this.bookModel.saveBookInDataBase();
-            clearFields(); //Todo tylko dla zapisywania nowych a nie dla edycji
+            clearFields();
         } catch (ApplicationException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
     }
 
-    //TODO nowa formatka dla edycji i funkcja editBookOnAction()
+    public void editBookOnAction() {
+        try {
+            this.bookModel.saveBookInDataBase();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
+    }
 
     private void clearFields() {
         this.authorComboBox.getSelectionModel().clearSelection();
@@ -88,4 +96,5 @@ public class BookController {
     public BookModel getBookModel() {
         return bookModel;
     }
+
 }

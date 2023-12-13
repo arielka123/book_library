@@ -93,7 +93,7 @@ public class AuthorController {
 
     public void deleteAuthorOnAction() {
         try {
-            authorModel.deleteAuthorInDatBase();
+            authorModel.deleteAuthorInDataBase();
         } catch (ApplicationException | SQLException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }

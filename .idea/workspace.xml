@@ -9,15 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="clear fields after adding new book">
+    <list default="true" id="1e45f7c0-53ee-4c9f-8194-9cbe094f75ba" name="Changes" comment="added EditBook.fxml">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/EditBook.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/AuthorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/CategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/database/dao/CategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/ListBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/controllers/ListBooksController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/AuthorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/moja/biblioteczka/modelFx/CategoryModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arielka/Desktop/projekt_przyszly_programista/java/MojaBiblioteczka/src/main/resources/icons&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arielka/Desktop/projekt_przyszly_programista/java/MojaBiblioteczka/src/main/resources/fxml&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.32413793&quot;,
@@ -96,8 +95,8 @@
       <recent name="pl.moja.biblioteczka.database.models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\icons" />
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\fxml" />
+      <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\resources\icons" />
@@ -107,6 +106,7 @@
       <recent name="C:\Users\Arielka\Desktop\projekt_przyszly_programista\java\MojaBiblioteczka\src\main\java\pl\moja\biblioteczka" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.moja.biblioteczka.controllers" />
       <recent name="pl.moja.biblioteczka.database.models" />
     </key>
   </component>
@@ -321,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702465272766</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fixed bugs">
+      <created>1702467036502</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1702467036502</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,7 +381,9 @@
     <MESSAGE value="book is deleted in db and tableView" />
     <MESSAGE value="books are edited in Modal Window" />
     <MESSAGE value="clear fields after adding new book" />
-    <option name="LAST_COMMIT_MESSAGE" value="clear fields after adding new book" />
+    <MESSAGE value="fixed bugs" />
+    <MESSAGE value="added EditBook.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="added EditBook.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
