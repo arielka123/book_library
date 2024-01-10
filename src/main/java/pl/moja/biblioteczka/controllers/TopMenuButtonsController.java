@@ -13,6 +13,10 @@ public class TopMenuButtonsController {
 
     private MainController mainController;
 
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
+
     @FXML
     private ToggleGroup toggleButtons;
 
@@ -32,10 +36,6 @@ public class TopMenuButtonsController {
     public void openStatistics() {
         mainController.setCenter(STATS_FXML);
 
-    }
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
     }
 
     @FXML

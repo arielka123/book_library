@@ -41,7 +41,6 @@ public class CategoryController {
 
     private void initBindings() {
         addCategoryButton.disableProperty().bind(categoryTextField.textProperty().isEmpty());   //gdy textfield jest pusty =true i przycisk wyłączony
-
         deleteCategoryButton.disableProperty().bind(this.categoryModel.categoryProperty().isNull());
         editCategoryButton.disableProperty().bind(this.categoryModel.categoryProperty().isNull());
 
