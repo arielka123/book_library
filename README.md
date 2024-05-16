@@ -1,4 +1,4 @@
 ## Book Library
 
-Aplikacja zarządzajaca domową biblioteczką
+Aplikacja zarządzajaca domową biblioteczką książek
 
